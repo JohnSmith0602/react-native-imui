@@ -165,7 +165,7 @@
     _showRecordeBtn = [[UIButton alloc]init];
     _showRecordeBtn.tag = DWInputBarControlBtnTypeRecord;
     [_showRecordeBtn addTarget:self action:@selector(clickControlBtn:) forControlEvents:UIControlEventTouchUpInside];
-    [_toolView addSubview:_showRecordeBtn];
+//    [_toolView addSubview:_showRecordeBtn];
     
     _inputGrowView = [[HPGrowingTextView alloc]init];
     _inputGrowView.backgroundColor = toolBackColor;
@@ -187,7 +187,7 @@
     _recordBtn = [[DWRecordButton alloc]init];
     _recordBtn.textArr = @[@"按住 说话",@"松开 结束",@"松开 取消"];
     _recordBtn.hidden = YES;
-    [_toolView addSubview:_recordBtn];
+//    [_toolView addSubview:_recordBtn];
     
     _showExpressionBtn = [[UIButton alloc]init];
     _showExpressionBtn.tag = DWInputBarControlBtnTypeExpression;
@@ -196,7 +196,7 @@
     _showMenuBtn = [[UIButton alloc]init];
     _showMenuBtn.tag = DWInputBarControlBtnTypeMenu;
     [_showMenuBtn addTarget:self action:@selector(clickControlBtn:) forControlEvents:UIControlEventTouchUpInside];
-    [_toolView addSubview:_showMenuBtn];
+//    [_toolView addSubview:_showMenuBtn];
     
     _expressionView = [[NIMInputEmoticonContainerView alloc]initWithFrame:CGRectMake(0, 0, screenW, expressionViewH)];
     _expressionView.delegate = self;
@@ -243,10 +243,12 @@
     _showExpressionBtn.frame = CGRectMake(expressionBtnX, btnY, btnWH, btnWH);
     
     CGFloat inputX = CGRectGetMaxX(_showRecordeBtn.frame)+1.5*_margin;
-    CGFloat inputW = expressionBtnX - inputX - 1.5*_margin;
+//    CGFloat inputW = expressionBtnX - inputX - 1.5*_margin;
+    CGFloat inputW = screenW - _margin * 2;
     CGFloat inputY = 1.6*_margin;
     CGFloat inputH = _toolH - 3.2*_margin;
-    _inputGrowView.frame = CGRectMake(inputX, inputY, inputW, inputH);
+//    _inputGrowView.frame = CGRectMake(inputX, inputY, inputW, inputH);
+    _inputGrowView.frame = CGRectMake(_margin, btnY, inputW, inputH);
     _recordBtn.frame = CGRectMake(inputX, inputY*(1-0.3), inputW, inputH+inputY*0.6);
 //    _recordBtn.frame = _inputGrowView.frame;
     _expressionView.y = CGRectGetMaxY(_toolView.frame);

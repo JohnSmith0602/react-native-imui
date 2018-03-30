@@ -76,10 +76,10 @@
   "readmeFilename": "README.md",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/reactnativecomponent/react-native-imui.git"
+    "url": "git+https://github.com/JohnSmith0602/react-native-imui.git"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "version": "1.0.7"
+  "version": "2.0.0"
 }

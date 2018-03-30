@@ -1,17 +1,14 @@
 # ReactNative IMUI
-项目fork自 jpush 的 [Aurora IMUI](https://github.com/jpush/aurora-imui/tree/master/ReactNative)
+定制版
 
 ## 使用
 参考[demo](https://github.com/reactnativecomponent/react-native-chat-demo)
-## 安装
 
-```
-npm install react-native-imui --save
 ```
 ## link
 
 ```
-react-native link react-native-imui 
+react-native link react-native-imui
 ```
  `settings.gradle` 中的引用路径：
 ```
@@ -108,7 +105,7 @@ message = {  // 语音
       duration:"3"
       isPlayed:false
       url:""
-    }   
+    }
 }
 
 message = {  //红包消息
