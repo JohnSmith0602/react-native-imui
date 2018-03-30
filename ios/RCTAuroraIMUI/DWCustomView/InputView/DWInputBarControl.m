@@ -192,7 +192,7 @@
     _showExpressionBtn = [[UIButton alloc]init];
     _showExpressionBtn.tag = DWInputBarControlBtnTypeExpression;
     [_showExpressionBtn addTarget:self action:@selector(clickControlBtn:) forControlEvents:UIControlEventTouchUpInside];
-    [_toolView addSubview:_showExpressionBtn];
+//    [_toolView addSubview:_showExpressionBtn];
     _showMenuBtn = [[UIButton alloc]init];
     _showMenuBtn.tag = DWInputBarControlBtnTypeMenu;
     [_showMenuBtn addTarget:self action:@selector(clickControlBtn:) forControlEvents:UIControlEventTouchUpInside];
