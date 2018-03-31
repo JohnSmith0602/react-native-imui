@@ -56,18 +56,12 @@ public class AvatarViewHolder<MESSAGE extends IMessage>
         } else {
             mDateTv.setVisibility(View.GONE);
         }
-        boolean isAvatarExists = message.getFromUser().getAvatarFilePath() != null
-                && !message.getFromUser().getAvatarFilePath().isEmpty();
-        if (isAvatarExists && mImageLoader != null) {
-            mImageLoader.loadAvatarImage(mAvatarIv, message.getFromUser().getAvatarFilePath());
-        } else if (mImageLoader == null) {
-            mAvatarIv.setVisibility(View.GONE);
-        }
+
+        mAvatarIv.getLayoutParams().height = 0;
+        mAvatarIv.getLayoutParams().width = 0;
+
         if (!mIsSender) {
-            if (mDisplayNameTv.getVisibility() == View.VISIBLE) {
-                mDisplayNameTv.setMaxEms(8);
-                mDisplayNameTv.setText(message.getFromUser().getDisplayName());
-            }
+            mDisplayNameTv.setVisibility(View.GONE);
         } else {
             switch (message.getMessageStatus()) {
                 case SEND_SENDING:

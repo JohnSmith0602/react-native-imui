@@ -63,7 +63,6 @@ public class ChatInputView extends LinearLayout {
     private Space mInputMarginLeft;
     private Space mInputMarginRight;
 
-    private ImageButton mVoiceBtn;
     private ImageButton mEmojiBtn;
     private ImageButton mSendBtn;
     private View mSendLayout;
@@ -123,15 +122,12 @@ public class ChatInputView extends LinearLayout {
         // menu buttons
         mChatInput = (EditText) findViewById(R.id.imui_chat_input);
         mChatVoice = (Button) findViewById(R.id.imui_chat_voice);
-        mVoiceBtn = (ImageButton) findViewById(R.id.imui_item_voice);
         mEmojiBtn = (ImageButton) findViewById(R.id.imui_item_emoji);
         mSendBtn = (ImageButton) findViewById(R.id.imui_item_send);
 
-        View voiceBtnContainer = findViewById(R.id.imui_layout_voice);
         View emojiBtnContainer = findViewById(R.id.imui_layout_emoji);
         mSendLayout = findViewById(R.id.imui_layout_send);
         mActionLayout = findViewById(R.id.imui_layout_action);
-        voiceBtnContainer.setOnClickListener(onMenuItemClickListener);
         emojiBtnContainer.setOnClickListener(onMenuItemClickListener);
         mSendLayout.setOnClickListener(onMenuItemClickListener);
         mActionLayout.setOnClickListener(onMenuItemClickListener);
@@ -269,13 +265,6 @@ public class ChatInputView extends LinearLayout {
                 }
                 changeSendToAction(true);
 
-            } else if (view.getId() == R.id.imui_layout_voice) {
-                switchVoiceOrInput();
-
-                showType = 0;
-                if (mListener != null) {
-                    mListener.onFeatureView(inputHeight, showType);
-                }
             } else {
                 if (mMenuContainer.getVisibility() != VISIBLE) {
                     dismissSoftInputAndShowMenu();
@@ -399,15 +388,14 @@ public class ChatInputView extends LinearLayout {
     }
 
     void changeSendToAction(boolean action) {
-        mSendLayout.setVisibility(action ? INVISIBLE : VISIBLE);
-        mActionLayout.setVisibility(action ? VISIBLE : INVISIBLE);
+        mSendLayout.setVisibility(VISIBLE);
+        mActionLayout.setVisibility(INVISIBLE);
 
     }
 
     void changeVoiceToInput(boolean input) {
         mChatInput.setVisibility(input ? VISIBLE : INVISIBLE);
         mChatVoice.setVisibility(input ? INVISIBLE : VISIBLE);
-        mVoiceBtn.setImageResource(input ? R.drawable.nim_message_button_bottom_audio_selector : R.drawable.nim_message_button_bottom_text_selector);
     }
 
     void switchVoiceOrInput() {
