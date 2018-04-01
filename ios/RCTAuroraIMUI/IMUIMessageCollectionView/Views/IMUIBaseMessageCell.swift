@@ -40,7 +40,7 @@ open class IMUIBaseMessageCell: UICollectionViewCell, IMUIMessageCellProtocal,Me
     self.contentView.addSubview(self.avatarImage)
     self.contentView.addSubview(self.timeBackView)
     self.timeBackView.addSubview(self.timeLabel)
-    self.contentView.addSubview(self.nameLabel)
+//    self.contentView.addSubview(self.nameLabel)
     self.contentView.addSubview(self.durationLabel)
     self.contentView.addSubview(self.isPlayedView)
     self.cellGesture.addTarget(self, action: #selector(self.tapCellView))

@@ -22,7 +22,7 @@ open class IMUIMessageCellLayout: NSObject, IMUIMessageCellLayoutProtocal {
   
   public static var timeLabelFrame: CGRect = CGRect.zero
   
-  public static var nameLabelSize: CGSize = CGSize(width: 200, height: 18)
+  public static var nameLabelSize: CGSize = CGSize(width: 200, height: 0)
   
   public static var nameLabelOffsetToAvatar: UIOffset = UIOffset(horizontal: 4 , vertical: 0)
   
